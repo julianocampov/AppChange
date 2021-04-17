@@ -9,4 +9,7 @@
     <string name="required_field">*Campo requerido</string>
     <string name="rep_password">Repita la contraseña</string>
     <string name="check_in">Registrarse</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="welcome">Bienvendo</string>
+    <string name="email_is">Su correo es:</string>
 </resources>
