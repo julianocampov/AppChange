@@ -3,7 +3,6 @@ package com.jovel.appchange
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
 import android.widget.Toast
 import com.jovel.appchange.databinding.ActivityLoginBinding
 

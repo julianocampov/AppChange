@@ -7,8 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.jovel.appchange.databinding.ActivityMainBinding
 
-
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBinding: ActivityMainBinding
@@ -19,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
         val datos = intent.extras
         val correo = datos?.getString("correo")
+        val nombre = datos?.getString("nombre")
 
         mainBinding.emailTextView.text = correo
+        mainBinding.nameTextView.text = nombre
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

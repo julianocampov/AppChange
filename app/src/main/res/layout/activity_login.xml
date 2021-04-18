@@ -35,7 +35,8 @@
         android:textColorHint="#4A000000"
         app:boxBackgroundColor="#FFFFFF"
         app:boxStrokeColor="#000000"
-        app:counterTextColor="@color/black">
+        app:counterTextColor="@color/black"
+        app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_edit_text"

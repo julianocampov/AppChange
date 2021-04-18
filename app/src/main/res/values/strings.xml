@@ -14,4 +14,7 @@
     <string name="email_is">Su correo es:</string>
     <string name="warning_login">El usuario o la contraseña son incorrectas</string>
     <string name="warning_login_empty">Algún campo está vacío</string>
+    <string name="password_not_match">Las contraseñas no coinciden</string>
+    <string name="password_length">"Debe tener mínimo 6 caracteres"</string>
+    <string name="missing_data">"Falta algún campo por rellenar"</string>
 </resources>
