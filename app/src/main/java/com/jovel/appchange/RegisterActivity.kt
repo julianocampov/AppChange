@@ -1,11 +1,11 @@
 package com.jovel.appchange
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.view.isNotEmpty
+import androidx.appcompat.app.AppCompatActivity
 import com.jovel.appchange.databinding.ActivityRegisterBinding
+
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -15,19 +15,20 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
+        this.setTitle(R.string.register)
 
         registerBinding.checkinButton.setOnClickListener{
             val nombre = registerBinding.nameEditText.text.toString()
             val correo = registerBinding.emailEditText.text.toString()
-            val contraseña = registerBinding.passwordEditText.text.toString()
+            val contra = registerBinding.passwordEditText.text.toString()
             val reppassword = registerBinding.repPasswordEditText.text.toString()
 
 
-            if(nombre.isNotEmpty() && correo.isNotEmpty() && contraseña.isNotEmpty() && reppassword.isNotEmpty()){
-                if(contraseña == reppassword){
+            if(nombre.isNotEmpty() && correo.isNotEmpty() && contra.isNotEmpty() && reppassword.isNotEmpty()){
+                if(contra == reppassword){
                     val intent = Intent(this, LoginActivity::class.java)
                     intent.putExtra("correo", correo)
-                    intent.putExtra("contraseña", contraseña)
+                    intent.putExtra("contraseña", contra)
                     intent.putExtra("nombre", nombre)
                     intent.putExtra("band",1)
                     startActivity(intent)
@@ -37,5 +38,12 @@ class RegisterActivity : AppCompatActivity() {
             }
             else Toast.makeText(this, "Falta algún campo por rellenar", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

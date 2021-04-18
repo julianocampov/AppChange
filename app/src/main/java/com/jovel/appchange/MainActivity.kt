@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import com.jovel.appchange.databinding.ActivityMainBinding
 
 
@@ -19,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
         val datos = intent.extras
-        val nombre = datos?.getString("nombre")
         val correo = datos?.getString("correo")
 
         mainBinding.emailTextView.text = correo
@@ -31,16 +29,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
+        when (item.itemId) {
             R.id.logout_menu -> {
                 val datos = intent.extras
                 val nombre = datos?.getString("nombre")
                 val correo = datos?.getString("correo")
-                val contraseña = datos?.getString("contraseña")
+                val contra = datos?.getString("contraseña")
                 val intent = Intent(this, LoginActivity::class.java)
 
                 intent.putExtra("correo", correo)
-                intent.putExtra("contraseña", contraseña)
+                intent.putExtra("contraseña", contra)
                 intent.putExtra("nombre", nombre)
                 intent.putExtra("band",0)
                 startActivity(intent)
@@ -48,21 +46,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 }

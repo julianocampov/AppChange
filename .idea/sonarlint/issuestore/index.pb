@@ -19,5 +19,5 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
-S
-#app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
+]
+-app/src/main/java/com/jovel/appchange/User.kt,4\c\4cae2b51c4eae32f6d6a9a9fa753a10af2d92d97
