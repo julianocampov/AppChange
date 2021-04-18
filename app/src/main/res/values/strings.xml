@@ -12,4 +12,6 @@
     <string name="logout">Cerrar sesión</string>
     <string name="welcome">Bienvendo</string>
     <string name="email_is">Su correo es:</string>
+    <string name="warning_login">El usuario o la contraseña son incorrectas</string>
+    <string name="warning_login_empty">Algún campo está vacío</string>
 </resources>
