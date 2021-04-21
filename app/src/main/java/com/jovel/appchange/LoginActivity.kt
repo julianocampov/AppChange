@@ -15,6 +15,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var nombre: String
     private lateinit var correo: String
     private lateinit var contra: String
+    private lateinit var emailInput: String
+    private lateinit var contraInput: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +24,12 @@ class LoginActivity : AppCompatActivity() {
         this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(loginBinding.root)
 
-        chargeData()
+        saveData()
         onChangeListener()
         buttonsListeners()
-
     }
 
-
-    private fun chargeData() {
+    private fun saveData() {
         val data = intent.extras
         nombre = data?.getString("nombre").toString()
         correo = data?.getString("correo").toString()
@@ -48,18 +48,15 @@ class LoginActivity : AppCompatActivity() {
 
     private fun buttonsListeners() {
         loginBinding.loginButton.setOnClickListener{
-            if(loginBinding.emailEditText.text.toString().isNotEmpty() && loginBinding.passwordEditText.text.toString().isNotEmpty()){
-                if(loginBinding.emailEditText.text.toString() == correo && loginBinding.passwordEditText.text.toString() == contra){
-                    val intent = Intent(this,MainActivity::class.java)                  //Se nombra "intent" haciendo referencia a "Intent", Intent funciona Intent(de donde estoy, para donde voy)
-                    intent.putExtra("correo", correo)                                           //Envía la información
-                    intent.putExtra("nombre", nombre)
-                    intent.putExtra("contraseña", contra)
-                    startActivity(intent)                                                              //Ejecuta la sentencia
-                    finish()
+
+            readTextInputs()
+
+            if(notEmptyFields(emailInput, contraInput," "," ", this)) {
+                if(compareStrings(emailInput,correo) && compareStrings(contraInput, contra)) {
+                    sendDataToMain()
                 }
                 else Toast.makeText(this, getString(R.string.warning_login), Toast.LENGTH_SHORT).show()
             }
-            else Toast.makeText(this, getString(R.string.warning_login_empty), Toast.LENGTH_SHORT).show()
         }
 
         loginBinding.registerTextView.setOnClickListener {
@@ -68,10 +65,26 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun sendDataToMain() {
+        val intent = Intent(this,MainActivity::class.java)                  //Se nombra "intent" haciendo referencia a "Intent", Intent funciona Intent(de donde estoy, para donde voy)
+        intent.putExtra("correo", correo)                                           //Envía la información
+        intent.putExtra("nombre", nombre)
+        intent.putExtra("contraseña", contra)
+        startActivity(intent)                                                              //Ejecuta la sentencia
+        finish()
+    }
+
     private fun onChangeListener() {
         loginBinding.emailEditText.doAfterTextChanged {
                 validateEmail()
-            }
+        }
+    }
+
+    private fun readTextInputs() {
+        with(loginBinding) {
+            emailInput = emailEditText.text.toString()
+            contraInput = passwordEditText.text.toString()
+        }
     }
 
     private fun validateEmail() {

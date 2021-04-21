@@ -19,5 +19,14 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
-]
--app/src/main/java/com/jovel/appchange/User.kt,4\c\4cae2b51c4eae32f6d6a9a9fa753a10af2d92d97
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+d
+4app/src/main/java/com/jovel/appchange/InputsUtils.kt,6\d\6da67d6af036def33fbd6cf7a4a62a1d97e3b427
+f
+6app/src/main/java/com/jovel/appchange/ConstantUtils.kt,5\9\596eb080f974fc43fb005a601c2723cafe13d43f
+R
+"app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
+X
+(app/src/main/res/values-night/themes.xml,8\c\8c3a6b96d9ffba496992e612d58227c19e6b9e65

@@ -22,7 +22,6 @@ class RegisterActivity : AppCompatActivity() {
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(registerBinding.root)
-        this.setTitle(R.string.register)
 
         buttonListener()
         onChangeListener()
@@ -33,8 +32,8 @@ class RegisterActivity : AppCompatActivity() {
 
             readTextInputs()
 
-            if (notEmptyFields() && validateName() && validateEmail() && validateContra() && validateRepContra()) {
-                chargeData()
+            if (notEmptyFields(nombre, correo, contra, reppassword, this) && validateName() && validateEmail() && validateContra() && validateRepContra()) {
+                sendDataToLogin()
             }
         }
     }
@@ -71,11 +70,6 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun notEmptyFields(): Boolean {
-        if(!(nombre.isNotEmpty() && correo.isNotEmpty() && contra.isNotEmpty() && reppassword.isNotEmpty())) Toast.makeText(this, getString(R.string.missing_data), Toast.LENGTH_SHORT).show()
-        return nombre.isNotEmpty() && correo.isNotEmpty() && contra.isNotEmpty() && reppassword.isNotEmpty()
-    }
-
     private fun validateName(): Boolean {
         if(lengthString(nombre, USER_NAME_LENGTH)) return true
         registerBinding.nameTextInputLayout.error = getString(R.string.enter_valid_name)
@@ -105,7 +99,7 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
 
-    private fun chargeData() {
+    private fun sendDataToLogin() {
         val intent = Intent(this, LoginActivity::class.java)
         intent.putExtra("correo", correo)
         intent.putExtra("contraseña", contra)
