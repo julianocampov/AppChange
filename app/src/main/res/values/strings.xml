@@ -22,4 +22,11 @@
     <string name="warning_login_empty">Algún campo está vacío</string>
     <string name="welcome">Bienvenido</string>
     <string name="enter_valid_name">Ingrese su nombre y apellido (mínimo 6 letras)</string>
+    <string name="title_activity_practica3">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="home">Inicio</string>
+    <string name="favorites">Favoritos</string>
+    <string name="change">Intercambia</string>
 </resources>

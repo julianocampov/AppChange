@@ -26,7 +26,3 @@ d
 4app/src/main/java/com/jovel/appchange/InputsUtils.kt,6\d\6da67d6af036def33fbd6cf7a4a62a1d97e3b427
 f
 6app/src/main/java/com/jovel/appchange/ConstantUtils.kt,5\9\596eb080f974fc43fb005a601c2723cafe13d43f
-R
-"app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
-X
-(app/src/main/res/values-night/themes.xml,8\c\8c3a6b96d9ffba496992e612d58227c19e6b9e65

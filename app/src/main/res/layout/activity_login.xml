@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo">
+    android:background="@drawable/fondo_login">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -18,10 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
+            android:alpha="1"
             android:background="@color/white"
             android:orientation="vertical"
             android:padding="16dp"
-            android:alpha="1"
             tools:context=".LoginActivity">
 
             <TextView
@@ -66,11 +66,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColorHint="#4A000000"
-                app:endIconTint="#4A000000"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxStrokeColor="#000000"
                 app:counterTextColor="@color/black"
-                app:endIconMode="password_toggle">
+                app:endIconMode="password_toggle"
+                app:endIconTint="#4A000000">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_edit_text"
